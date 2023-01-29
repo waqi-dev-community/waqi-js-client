@@ -82,10 +82,10 @@ hour_array=(500 240 1400 900 300)
 hour_array_length=${#hour_array[@]}
 
 
-while [ $counter -le 0 ]
+while [ $counter -le 10 ]
  do
       commit_counter=0
-      commit_count_array=(0 2 5 3 10 1 0 1 2 4)
+      commit_count_array=(0 2 5 3 10 1 0 10 2 4)
       commit_count_array_length=${#commit_count_array[@]}
       commit_count_index=$((RANDOM % commit_count_array_length))
       commit_count="${commit_count_array[commit_count_index]}"
@@ -97,8 +97,8 @@ while [ $counter -le 0 ]
           # Get the element at the random index
           random_element="${my_array[random_index]}"
 
-           dateUsed=$(gdate -d "2021-11-20 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
-           echo $dateUsed > filebeat.md
+           dateUsed=$(gdate -d "2023-01-29 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
+           echo $dateUsed > rand.md
            git add .
            git commit -m "$random_element"
 
