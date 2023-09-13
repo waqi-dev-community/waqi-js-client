@@ -1,4 +1,4 @@
-import axios from 'axios';
+const axios = require('axios')
 
 class WaqiAPIEntity {
     constructor(apiKey) {
@@ -20,17 +20,24 @@ class WaqiAPIEntity {
         return '&' + queryParams.toString();
     }
 
-    async fetchItems(asArray = false) {
+    async fetchItems() {
         const url = this.url();
         const tokenParam = `token=${this.apiKey}`;
         const queryParams = this.buildQueryParams();
 
-        try {
-            const response = await axios.get(`${url}?${tokenParam}${queryParams}`);
-            return asArray ? response.data : JSON.parse(response.data);
-        } catch (error) {
-            throw new Error(`Error fetching data: ${error.message}`);
-        }
+        const options = {
+            method: 'GET',
+            url: `${url}?${tokenParam}${queryParams}`,
+            headers: {
+                'content-type': 'application/json',
+            },
+        };
+
+        return axios.request(options).then(response => {
+            return response.data
+        }).catch( error => {
+            throw error;
+        })
     }
 }
 

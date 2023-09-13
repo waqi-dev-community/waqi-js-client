@@ -1,8 +1,9 @@
-import MapStation  from './Entity/MapStation';
-import CityFeed from "./Entity/CityFeed";
-import Search from "./Entity/Search";
-import IPFeed from "./Entity/IPFeed";
-import GeoFeed from "./Entity/GeoField";
+const MapStation = require('./Entity/MapStation');
+const CityFeed= require('./Entity/CityFeed');
+const Search= require('./Entity/Search');
+const IPFeed= require('./Entity/IPFeed');
+const GeoFeed= require('./Entity/GeoField');
+
 
 class API {
     constructor(apiKey) {

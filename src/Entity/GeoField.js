@@ -1,4 +1,4 @@
-import WaqiAPIEntity from './WaqiAPIEntity'
+const WaqiAPIEntity = require('./WaqiAPIEntity')
 
 class GeoFeed extends WaqiAPIEntity {
     setCoordinates(latitude, longitude) {

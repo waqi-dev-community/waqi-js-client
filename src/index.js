@@ -1,3 +1,3 @@
-import API from './API'
+const API = require('./API')
 
 module.exports = API

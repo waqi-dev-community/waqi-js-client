@@ -1,4 +1,4 @@
-import WaqiAPIEntity from './WaqiAPIEntity'
+const WaqiAPIEntity = require('./WaqiAPIEntity')
 
 class MapStation extends WaqiAPIEntity {
     setMapBounds(latitudeNorth, longitudeWest, latitudeSouth, longitudeEast) {
