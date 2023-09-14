@@ -29,7 +29,7 @@ const waqiAPI = new API(apiKey);
 ```javascript
 const cityFeedEntity = waqiAPI.cityFeed();
 cityFeedEntity.setCity("Munich");
-cityFeedEntity.fetch().then(response => {
+cityFeedEntity.fetchItems().then(response => {
     console.log(response);
 }).catch(error => {
     console.error(error);
@@ -41,7 +41,7 @@ cityFeedEntity.fetch().then(response => {
 ```javascript
 const searchEntity = waqiAPI.search();
 searchEntity.setKeyword("Johannesburg");
-searchEntity.fetch().then(response => {
+searchEntity.fetchItems().then(response => {
     console.log(response);
 }).catch(error => {
     console.error(error);
@@ -53,7 +53,7 @@ searchEntity.fetch().then(response => {
 ```javascript
 const geoFeedEntity = waqiAPI.geoFeed();
 geoFeedEntity.setCoordinates(37.7749, -122.4194);
-geoFeedEntity.fetch().then(response => {
+geoFeedEntity.fetchItems().then(response => {
     console.log(response);
 }).catch(error => {
     console.error(error);
@@ -65,7 +65,7 @@ geoFeedEntity.fetch().then(response => {
 ```javascript
 const ipFeedEntity = waqiAPI.ipFeed();
 ipFeedEntity.setIP("MY_IP");
-ipFeedEntity.fetch().then(response => {
+ipFeedEntity.fetchItems().then(response => {
     console.log(response);
 }).catch(error => {
     console.error(error);
@@ -77,7 +77,7 @@ ipFeedEntity.fetch().then(response => {
 ```javascript
 const mapStationEntity = waqiAPI.mapStation();
 mapStationEntity.setMapBounds(40.712, -74.006, 34.052, -118.243);
-mapStationEntity.fetch().then(response => {
+mapStationEntity.fetchItems().then(response => {
     console.log(response);
 }).catch(error => {
     console.error(error);
