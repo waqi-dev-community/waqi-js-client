@@ -1,6 +1,6 @@
 {
   "name": "waqi-js-client",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "JS client library for the World Air Quality Index (WAQI) APIs. All available API modules are supported - City feed, Geolocalized feed, Search, and Map Queries.",
   "main": "src/index.js",
   "scripts": {
