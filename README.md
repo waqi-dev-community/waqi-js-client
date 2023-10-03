@@ -20,20 +20,25 @@ Sign up for an API key [here](https://aqicn.org/data-platform/token/)
 The primary `API` class is a factory class that creates objects for each of the API modules, allowing you to make requests to any of them with your desired request parameters. You have to first create an object for it, then access your desired API module via the object. See the code snippets below:
 
 ```javascript
-const apiKey = 'YOUR_API_KEY';
+const apiKey = "YOUR_API_KEY";
 const waqiAPI = new API(apiKey);
 ```
+
+Replace `'YOUR_API_KEY'` with the actual API key you already obtained from above.
 
 **For City Feed:**
 
 ```javascript
 const cityFeedEntity = waqiAPI.cityFeed();
 cityFeedEntity.setCity("Munich");
-cityFeedEntity.fetchItems().then(response => {
+cityFeedEntity
+  .fetchItems()
+  .then((response) => {
     console.log(response);
-}).catch(error => {
+  })
+  .catch((error) => {
     console.error(error);
-});
+  });
 ```
 
 **For Search:**
@@ -41,11 +46,14 @@ cityFeedEntity.fetchItems().then(response => {
 ```javascript
 const searchEntity = waqiAPI.search();
 searchEntity.setKeyword("Johannesburg");
-searchEntity.fetchItems().then(response => {
+searchEntity
+  .fetchItems()
+  .then((response) => {
     console.log(response);
-}).catch(error => {
+  })
+  .catch((error) => {
     console.error(error);
-});
+  });
 ```
 
 **For Lat/Lng based Geolocalized feed:**
@@ -53,11 +61,14 @@ searchEntity.fetchItems().then(response => {
 ```javascript
 const geoFeedEntity = waqiAPI.geoFeed();
 geoFeedEntity.setCoordinates(37.7749, -122.4194);
-geoFeedEntity.fetchItems().then(response => {
+geoFeedEntity
+  .fetchItems()
+  .then((response) => {
     console.log(response);
-}).catch(error => {
+  })
+  .catch((error) => {
     console.error(error);
-});
+  });
 ```
 
 **For IP based Geolocalized feed:**
@@ -65,11 +76,14 @@ geoFeedEntity.fetchItems().then(response => {
 ```javascript
 const ipFeedEntity = waqiAPI.ipFeed();
 ipFeedEntity.setIP("MY_IP");
-ipFeedEntity.fetchItems().then(response => {
+ipFeedEntity
+  .fetchItems()
+  .then((response) => {
     console.log(response);
-}).catch(error => {
+  })
+  .catch((error) => {
     console.error(error);
-});
+  });
 ```
 
 **For Map Queries:**
@@ -77,11 +91,12 @@ ipFeedEntity.fetchItems().then(response => {
 ```javascript
 const mapStationEntity = waqiAPI.mapStation();
 mapStationEntity.setMapBounds(40.712, -74.006, 34.052, -118.243);
-mapStationEntity.fetchItems().then(response => {
+mapStationEntity
+  .fetchItems()
+  .then((response) => {
     console.log(response);
-}).catch(error => {
+  })
+  .catch((error) => {
     console.error(error);
-});
+  });
 ```
-
-Replace `'YOUR_API_KEY'` with your actual API key when using this library.
